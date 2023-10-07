@@ -12,6 +12,7 @@ struct HomeView: View {
     var safeArea: EdgeInsets
     
     //View State propr.
+    @State private var  offsetY: CGFloat = 0
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
@@ -19,7 +20,7 @@ struct HomeView: View {
                 HeaderView()
                     .background(
                         ScrollDetector(onScroll: { offset in
-                            print(offset)
+                            offsetY = -offset
                         }, ondragging: { offset, velocity in
                             
                         }))
@@ -58,6 +59,7 @@ struct HomeView: View {
 
         }
         .frame(height: headerHeight)
+        .offset(y: -offsetY)
         
     }
     
