@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3D1415772AD190CE00CC24C2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1415762AD190CE00CC24C2 /* HomeView.swift */; };
+		3D1415792AD1994400CC24C2 /* ScrollDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1415782AD1994400CC24C2 /* ScrollDetector.swift */; };
 		3DA3C23F2AD16763004981E2 /* StickyHeaderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA3C23E2AD16763004981E2 /* StickyHeaderApp.swift */; };
 		3DA3C2412AD16763004981E2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA3C2402AD16763004981E2 /* ContentView.swift */; };
 		3DA3C2432AD16766004981E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DA3C2422AD16766004981E2 /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		3D1415762AD190CE00CC24C2 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		3D1415782AD1994400CC24C2 /* ScrollDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollDetector.swift; sourceTree = "<group>"; };
 		3DA3C23B2AD16763004981E2 /* StickyHeader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StickyHeader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DA3C23E2AD16763004981E2 /* StickyHeaderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyHeaderApp.swift; sourceTree = "<group>"; };
 		3DA3C2402AD16763004981E2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				3D1415762AD190CE00CC24C2 /* HomeView.swift */,
+				3D1415782AD1994400CC24C2 /* ScrollDetector.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D1415792AD1994400CC24C2 /* ScrollDetector.swift in Sources */,
 				3D1415772AD190CE00CC24C2 /* HomeView.swift in Sources */,
 				3DA3C2412AD16763004981E2 /* ContentView.swift in Sources */,
 				3DA3C23F2AD16763004981E2 /* StickyHeaderApp.swift in Sources */,

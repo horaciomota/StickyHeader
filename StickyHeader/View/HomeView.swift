@@ -11,10 +11,18 @@ struct HomeView: View {
     var size: CGSize
     var safeArea: EdgeInsets
     
+    //View State propr.
+    
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
-            VStack(spacing: 0) {
+            VStack(spacing: 15) {
                 HeaderView()
+                    .background(
+                        ScrollDetector(onScroll: { offset in
+                            print(offset)
+                        }, ondragging: { offset, velocity in
+                            
+                        }))
             }
         }
     }
@@ -26,7 +34,7 @@ struct HomeView: View {
         ZStack {
             Rectangle().fill(.black)
             
-            VStack (spacing: 10) {
+            VStack (spacing: 5) {
                 GeometryReader {
                     var rect = $0.frame(in: .global)
                     
@@ -45,6 +53,9 @@ struct HomeView: View {
                     .font(.subheadline)
                     .foregroundColor(.white)
             }
+            .padding(.top, safeArea.top)
+            .padding(.bottom, 15)
+
         }
         .frame(height: headerHeight)
         
