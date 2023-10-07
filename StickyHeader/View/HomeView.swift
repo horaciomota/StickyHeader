@@ -26,7 +26,7 @@ struct HomeView: View {
         ZStack {
             Rectangle().fill(.black)
             
-            VStack {
+            VStack (spacing: 10) {
                 GeometryReader {
                     var rect = $0.frame(in: .global)
                     
@@ -34,6 +34,16 @@ struct HomeView: View {
                         .resizable()
                         .clipShape(Circle())
                 }
+                .frame(width: headerHeight * 0.8 , height: headerHeight * 0.5)
+                
+                Text("Horacio Mota")
+                    .font(.title)
+                    .foregroundColor(.white)
+                    .fontWeight(.bold)
+                
+                Text("IOS develoer")
+                    .font(.subheadline)
+                    .foregroundColor(.white)
             }
         }
         .frame(height: headerHeight)
