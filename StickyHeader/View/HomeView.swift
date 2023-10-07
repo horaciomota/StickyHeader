@@ -17,15 +17,17 @@ struct HomeView: View {
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack(spacing: 15) {
-                HeaderView()
-                    .background(
-                        ScrollDetector(onScroll: { offset in
-                            offsetY = -offset
-                        }, ondragging: { offset, velocity in
-                            
-                        }))
-                
+                HeaderView()    
+                    .zIndex(1000)
                 sampleCardView()
+                    .padding(.horizontal)
+            }
+            .background{
+                ScrollDetector{ offset in
+                    offsetY = -offset
+                } ondragging: { offset, velocity in
+                    
+                }
             }
         }
     }
@@ -33,13 +35,16 @@ struct HomeView: View {
     @ViewBuilder
     func HeaderView() -> some View {
         let headerHeight = (size.height * 0.4) + safeArea.top
+        let minimunHeaderHeight = safeArea.top
+        let progress = max(min(-offsetY / (headerHeight - minimunHeaderHeight), 1), 0)
         
         ZStack {
             Rectangle().fill(.black)
             
             VStack (spacing: 5) {
                 GeometryReader {
-                    var rect = $0.frame(in: .global)
+                    let rect = $0.frame(in: .global)
+                    let halfScaleHeight = (rect.height * 0.5) * 0.5
                     
                     Image("Profile_pic")
                         .resizable()
@@ -60,7 +65,7 @@ struct HomeView: View {
             .padding(.bottom, 15)
 
         }
-        .frame(height: headerHeight)
+        .frame(height: (headerHeight + offsetY) < minimunHeaderHeight ? minimunHeaderHeight: (headerHeight + offsetY), alignment: .bottom)
         .offset(y: -offsetY)
         
     }
