@@ -24,6 +24,8 @@ struct HomeView: View {
                         }, ondragging: { offset, velocity in
                             
                         }))
+                
+                sampleCardView()
             }
         }
     }
@@ -62,6 +64,18 @@ struct HomeView: View {
         .offset(y: -offsetY)
         
     }
+    
+    @ViewBuilder
+    func sampleCardView() -> some View {
+        VStack(spacing: 10) {
+            ForEach(1...10, id: \.self) {_ in
+                RoundedRectangle(cornerRadius: 10, style: .continuous)
+                    .fill(.black.opacity(0.09))
+                    .frame(height: 99)
+            }
+        }
+    }
+    
     
     struct HomeView_Previews: PreviewProvider {
         static var previews: some View {
